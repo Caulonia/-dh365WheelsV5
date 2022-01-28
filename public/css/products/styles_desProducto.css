@@ -4,6 +4,7 @@ body {
 }
 
 @media (min-width: 350px) {
+    
     .espacioEnBlanco {
         height: 70px;
         width: 100vw;
@@ -97,6 +98,27 @@ body {
         font-weight: bold;
         font-size: 25px;
     }
+    .casillaBoton {
+        display: flex;
+        justify-content: space-evenly;
+        height: 30px;
+    }
+      
+     .botonProducto{
+      width: 45%;
+      height: 25px;
+      background-color: #fff;
+      border: #918f8f 0.2px solid;
+      border-radius: 3px;
+        }
+    
+    .botonProducto:hover{
+     background-color: #00397d;
+     color: #fff;
+     font-weight: 600;
+    
+    }
+    
 }
 
 
