@@ -20,7 +20,7 @@ const userController = {
     },*/
 
     profile: (req, res) =>{
-          return  res.render('users/usersDetail', {
+          return  res.render('users/userProfile', {
               userLogin: req.session.userLogged,
           });
         
