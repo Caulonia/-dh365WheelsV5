@@ -13,7 +13,7 @@
         <div class="listadoAutos">
             <% for (let i = 0; i< autos.length; i++) { %>
                 <div class="contenedorAuto">
-                    <div class="cardAuto" onclick="window.open('/productos/3','mywindow');" style="cursor: pointer">
+                    <div class="cardAuto" onclick="window.open('/productos/<%=autos[i].id%>','mywindow');" style="cursor: pointer">
                         <a class="nombre-tipo"><%= autos[i].modelo %></a>
                         <div class="color-blanco"></div>
                         <img class="imagenLista" src="/img/products/<%= autos[i].imagen %>" alt="" />
@@ -41,6 +41,10 @@
                             <a class="dinamDetallePrecio">$ <%= autos[i].precio %></a>
                         </div>
                     </div>
+                    <div class="casillaBoton">
+                        <button class="botonProducto">Agregar al carrito</button>
+                        <button class="botonProducto">Comprar</button>
+                      </div>
                 </div>
                 <% } %>
         </div>
