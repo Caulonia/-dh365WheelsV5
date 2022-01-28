@@ -31,13 +31,13 @@ const userController = {
         res.render('users/register');
     },
     proccesRegister: (req, res) =>{
-      const resultaValidation =  validationResult(req);
+     /* const resultaValidation =  validationResult(req);
         if (resultaValidation.errors.length > 0){
             res.render('users/register', {
                 errors: resultaValidation.mapped(),
                 oldData: req.body,
             });
-        };
+        };*/
         let userInDB = User.findByField('email', req.body.email);
         if(userInDB){
           return  res.render('users/register', {
