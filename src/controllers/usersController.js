@@ -6,7 +6,7 @@ const fs = require('fs');
 
 const User = require('../models/User');
 
-const users = path.join(__dirname, '../dataBase/users.json');
+
 const usuarios = JSON.parse(fs.readFileSync(users, 'utf-8'));
 
 
