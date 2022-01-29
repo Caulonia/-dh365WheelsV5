@@ -4,6 +4,9 @@ const fs = require('fs');
 
 const Product = require('../models/Product');
 
+const products = path.join(__dirname, '../dataBase/products.json');
+const autos = JSON.parse(fs.readFileSync(products, 'utf-8'));
+
 
 const productsController = {
 
@@ -21,9 +24,6 @@ const productsController = {
         res.render('products/productDetail', { miAuto: miAuto });
 
     },
-    /*detail: (req, res) => {
-        res.render('products/productDetail')
-    },*/
     cart: (req, res) => {
         res.render('products/productCart')
     },
@@ -33,7 +33,6 @@ const productsController = {
     save: (req, res) => {
         const autoCreate = {
             marca: req.body.marca,
-            //logo: req.file.filename,
             modelo: req.body.modelo,
             kilometros: req.body.kilometros,
             año: req.body.año,
@@ -44,28 +43,8 @@ const productsController = {
             imagen: req.file.filename,
         };
         let autoCreated = Product.create(autoCreate);
-        return res.redirect('/productos');
-        /* const productCreate = req.body;
-         const imageUpLoad = req.file;
-         let ultimoAuto = autos.pop();
-         autos.push(ultimoAuto);
-         let autoNuevo = {
-             id: ultimoAuto.id +1,
-             marca: productCreate.marca,
-             logo: productCreate.logo,
-             modelo: productCreate.modelo,
-             kilometros: productCreate.kilometros,
-             año: productCreate.año,
-             color: productCreate.color,
-             combustible: productCreate.combustible,
-             motor: productCreate.motor,
-             precio: productCreate.precio,
-             imagen: imageUpLoad.fileName,
-         };
-         autos.push(autoNuevo);
-         let autoNuevoGuardar = JSON.stringify(autos,null,2);
-         fs.writeFileSync(path.resolve(__dirname,'../dataBase/products.json'), autoNuevoGuardar);
-         res.redirect('/productos');*/
+        return res.render('products/desProducto');
+       
     },
     modificar: (req, res) => {
         const idAuto = req.params.id;
