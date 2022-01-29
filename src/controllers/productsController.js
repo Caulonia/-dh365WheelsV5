@@ -4,9 +4,6 @@ const fs = require('fs');
 
 const Product = require('../models/Product');
 
-const products = path.join(__dirname, '../dataBase/products.json');
-const autos = JSON.parse(fs.readFileSync(products, 'utf-8'));
-
 
 const productsController = {
 
