@@ -128,7 +128,7 @@ const userController = {
         }); 
         let userActualizar = JSON.stringify(userEditar, null, 2);
         fs.writeFileSync(path.resolve(__dirname,'../dataBase/users.json'),userActualizar);
-        res.redirect('/usuarios');
+        res.redirect('/usuarios/perfil');
     },
     eliminar: (req, res)=>{
         const idUser = req.params.id;
@@ -145,7 +145,7 @@ const userController = {
         const usuariosFinal = usuarios.filter(user => user.id != userDeleteId);
         let userGuardar = JSON.stringify(usuariosFinal,null,2)
         fs.writeFileSync(path.resolve(__dirname, '../dataBase/users.json'),userGuardar);
-       res.redirect('/usuarios');
+       res.redirect('/');
     }
 }
 
