@@ -109,7 +109,7 @@ const userController = {
         const idUser = req.params.id;
         let miUser = usuarios.find(user=> user.id == idUser);
         if(miUser){
-            res.render('users/miUser/modificar', {miUser});  
+            res.render('users/userEdit', {miUser});  
         }else{
             res.render('main/not-found');
         };
